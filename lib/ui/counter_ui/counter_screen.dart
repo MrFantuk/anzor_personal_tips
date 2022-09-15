@@ -1,4 +1,5 @@
-import 'package:anzor_personal_tips/bloc/counter/counter_bloc.dart';
+
+import 'package:anzor_personal_tips/bloc/export_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
