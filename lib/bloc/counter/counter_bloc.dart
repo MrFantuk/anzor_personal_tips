@@ -8,9 +8,10 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     ///При событии мы передаем одно из состояний CounterState;
     ///Пример без выноса void функции
     on<LoadCounterEvent>((variable, emit) {
+      variable.number;
       // На данный момент, не производим никаких операций
       // Исходное значение (10), получаем из BlocProvider который создаем вместе с ..add(Event) в main.dart
-    
+
       // эмиттим(передаем необходимое состояние)
       emit(CounterLoadedState(variable.number));
     });
@@ -20,16 +21,19 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
 
 //Выносим void Функцию, для удобства чтения кода
   void _onIncreaseCounter(
-      IncreaseCounterEvent event, Emitter<CounterState> emit) {
+      IncreaseCounterEvent event, Emitter<CounterState> emit) async {
     //Здесь проводим все необходимые операции
     final total = event.number + 1;
+
 // После произведенных операций эмиттим(передаем необходимое состояние)
     emit(CounterLoadedState(total));
   }
 
   void _onDecrCounter(DecreaseCounterEvent event, Emitter<CounterState> emit) {
-      //Здесь проводим все необходимые операции
+    print("decrease");
+    //Здесь проводим все необходимые операции
     final total = event.number - 1;
+
     // После произведенных операций эмиттим(передаем необходимое состояние)
     emit(CounterLoadedState(total));
   }

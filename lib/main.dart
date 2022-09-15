@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         providers: [
         // создаем связь Bloc с приложением
           BlocProvider(
-            // ..add добавление Event при создании блока (из counter_event.dart)
+            // ..add добавление Event при создании блока 
             create: (BuildContext context) => CounterBloc()..add(LoadCounterEvent(10)),  
           ),
           

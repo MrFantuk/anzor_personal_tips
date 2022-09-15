@@ -7,7 +7,9 @@ class LoadCounterEvent extends CounterEvent {
   //Переменные которые мы хотим передать вместе с Событием(Event)
   int number;
 
-  LoadCounterEvent(this.number);
+  LoadCounterEvent(
+    this.number,
+  );
 }
 
 class UpdateCounterEvent extends CounterEvent {}
